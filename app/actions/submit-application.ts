@@ -5,11 +5,32 @@ import { v4 as uuidv4 } from "uuid"
 import { Resend } from "resend"
 import { supabaseServer } from "@/lib/supabase/server"
 
+// Define the base schema with all fields as optional initially, except for the always-required ones
 const baseApplicationSchema = z.object({
   name: z.string().min(1, "Roleplay Name is required"),
   email: z.string().email("Invalid email address"),
   discordId: z.string().min(1, "Discord ID is required").max(50, "Discord ID cannot exceed 50 characters"),
-  age: z.number().min(15, "You must be at least 15 years old to apply.").max(99, "Please enter a realistic age."),
+  age: z
+    .string()
+    .transform((val, ctx) => {
+      if (val === null || val.trim() === "") {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: "Age is required.",
+        })
+        return z.NEVER
+      }
+      const num = Number(val)
+      if (isNaN(num)) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: "Age must be a number.",
+        })
+        return z.NEVER
+      }
+      return num
+    })
+    .pipe(z.number().min(15, "You must be at least 15 years old to apply.").max(99, "Please enter a realistic age.")),
   department: z.enum(["Boston Regional Communications Center", "Early Access"], {
     errorMap: () => ({ message: "Department selection is required." }),
   }),
@@ -20,6 +41,7 @@ const baseApplicationSchema = z.object({
   earlyAccessReason: z.string().max(1000, "Reason cannot exceed 1000 characters").optional(),
 })
 
+// Use superRefine for conditional validation
 const applicationSchema = baseApplicationSchema.superRefine((data, ctx) => {
   if (data.department === "Boston Regional Communications Center") {
     if (!data.priorExperience || data.priorExperience.trim() === "") {
@@ -85,7 +107,7 @@ export async function submitApplication(prevState: any, formData: FormData) {
     name: formData.get("name"),
     email: formData.get("email"),
     discordId: formData.get("discordId"),
-    age: formData.get("age") ? Number(formData.get("age")) : undefined,
+    age: formData.get("age"),
     department: formData.get("department"),
     priorExperience: String(formData.get("priorExperience") || ""),
     dispatchScenario: String(formData.get("dispatchScenario") || ""),
@@ -98,6 +120,7 @@ export async function submitApplication(prevState: any, formData: FormData) {
 
   if (!parsed.success) {
     const errors = parsed.error.flatten().fieldErrors
+    console.error("Application Validation Errors:", errors) // <-- THIS LINE IS CRUCIAL FOR DIAGNOSIS
     return {
       success: false,
       message: "Validation failed. Please check your inputs.",
