@@ -6,10 +6,12 @@ import ClientLayout from "./ClientLayout" // Import the client layout
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  // Metadata should be exported from a Server Component or a separate file
-  title: "FiveM Community - Roleplay Server",
+  title: "MassReality",
   description:
     "🏙️  MassReality FivePD, We offer an immense hyper-realistic 1:1 Massachusetts state roleplay experience. We take our roleplay experience seriously to clone real life events. Additionally, at MassReality you can easily dive into our hard working departments to keep the state running smoothly.",
+  icons: {
+    icon: "/images/massreality-logo.png",
+  },
     generator: 'v0.dev'
 }
 

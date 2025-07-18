@@ -268,7 +268,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="Cad" className="py-20 bg-muted/50">
+        <section id="Cad" className="py-20 animated-bg">
           <div className="container">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Cad Information</h2>
@@ -575,7 +575,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="rules" className="py-20 bg-muted/50">
+        <section id="rules" className="py-20 animated-bg">
           <div className="container">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Server Rules & Policies</h2>
@@ -793,7 +793,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t bg-muted/50">
+      <footer className="border-t animated-bg">
         <div className="container py-8 md:py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
