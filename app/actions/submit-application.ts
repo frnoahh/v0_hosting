@@ -1,6 +1,9 @@
 "use server"
 
 import { z } from "zod"
+import { v4 as uuidv4 } from "uuid"
+import { Resend } from "resend"
+import { supabaseServer } from "@/lib/supabase/server" // Import the server-side Supabase client
 
 // Define the base schema with all fields as optional initially, except for the always-required ones
 const baseApplicationSchema = z.object({
@@ -121,26 +124,83 @@ export async function submitApplication(prevState: any, formData: FormData) {
     earlyAccessReason,
   } = parsed.data
 
-  // Get the Discord webhook URL from environment variables
-  const webhookUrl = process.env.DISCORD_APPLICATION_WEBHOOK_URL
-
-  if (!webhookUrl) {
-    console.error("DISCORD_APPLICATION_WEBHOOK_URL is not set.")
-    return {
-      success: false,
-      message: "Server configuration error: Discord webhook URL is missing.",
-    }
-  }
+  // Generate verification token and expiration
+  const verificationToken = uuidv4()
+  const tokenExpiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000) // Token valid for 24 hours
 
   try {
+    // Save application to Supabase
+    const { data: newApplication, error: dbError } = await supabaseServer
+      .from("applications")
+      .insert({
+        name,
+        email,
+        discord_id: discordId,
+        age,
+        department,
+        prior_experience: priorExperience,
+        dispatch_scenario: dispatchScenario,
+        code5_scenario: code5Scenario,
+        message,
+        early_access_reason: earlyAccessReason,
+        verification_token: verificationToken,
+        is_verified: false,
+        token_expires_at: tokenExpiresAt.toISOString(),
+      })
+      .select()
+      .single()
+
+    if (dbError) {
+      console.error("Supabase insert error:", dbError)
+      return {
+        success: false,
+        message: `Failed to save application: ${dbError.message}`,
+      }
+    }
+
+    // Send verification email using Resend
+    const resend = new Resend(process.env.RESEND_API_KEY)
+    const verificationLink = `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/verify-email?token=${verificationToken}`
+
+    const { data: emailData, error: emailError } = await resend.emails.send({
+      from: "onboarding@massreality.vercel.app", // Replace with your verified Resend domain email
+      to: email,
+      subject: "Verify your MassReality FivePD Application Email",
+      html: `<p>Hello ${name},</p>
+             <p>Thank you for applying to MassReality FivePD. Please click the link below to verify your email address:</p>
+             <p><a href="${verificationLink}">Verify Email Address</a></p>
+             <p>This link will expire in 24 hours.</p>
+             <p>If you did not apply, please ignore this email.</p>`,
+    })
+
+    if (emailError) {
+      console.error("Resend email error:", emailError)
+      // You might want to delete the application from DB here if email sending is critical
+      return {
+        success: false,
+        message: `Failed to send verification email: ${emailError.message}`,
+      }
+    }
+
+    // Get the Discord webhook URL from environment variables
+    const webhookUrl = process.env.DISCORD_APPLICATION_WEBHOOK_URL
+
+    if (!webhookUrl) {
+      console.error("DISCORD_APPLICATION_WEBHOOK_URL is not set.")
+      return {
+        success: false,
+        message: "Server configuration error: Discord webhook URL is missing.",
+      }
+    }
+
     // Construct the Discord webhook payload
     const discordPayload = {
       username: "MassReality Application Bot",
       avatar_url: "https://massreality.vercel.app/images/massreality-logo.png", // Replace with your bot's avatar or server logo
       embeds: [
         {
-          title: `New Application: ${name} (${department})`,
-          description: `A new application has been submitted for the **${department}** department.`,
+          title: `New Application: ${name} (${department}) - Email Pending Verification`, // Indicate pending verification
+          description: `A new application has been submitted for the **${department}** department. Email verification is pending.`,
           color: 0xa1c1f2, // Your primary color #a1c1f2 in decimal
           fields: [
             {
@@ -231,7 +291,7 @@ export async function submitApplication(prevState: any, formData: FormData) {
 
     return {
       success: true,
-      message: "Application submitted successfully! We will review it shortly.",
+      message: "Application submitted successfully! Please check your email to verify your address.",
     }
   } catch (error: any) {
     console.error("Error submitting application:", error)

@@ -67,7 +67,7 @@ export default function Home() {
               </Button>
             </Link>
             <Link href="https://cfx.re/join/3z5ljb" target="_blank" rel="noopener noreferrer">
-              <Button size="sm" className="bg-primary hover:bg-primary/90">
+              <Button size="sm" className="bg-primary hover:bg-primary/90 hover:shadow-primary-glow">
                 Connect Now
                 <ChevronRight className="ml-1 h-4 w-4" />
               </Button>
@@ -105,13 +105,17 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="https://cfx.re/join/3z5ljb" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-lg">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-lg hover:shadow-primary-glow">
                   <MapPin className="mr-2 h-4 w-4" />
                   Connect To Server
                 </Button>
               </Link>
               <Link href="https://discord.gg/massreality" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="lg" className="bg-background/80 backdrop-blur">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="bg-background/80 backdrop-blur hover:shadow-primary-glow"
+                >
                   <Discord className="mr-2 h-4 w-4" />
                   Join Our Discord
                 </Button>
@@ -124,7 +128,7 @@ export default function Home() {
         <section className="py-12 bg-muted/30">
           <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="text-center border-primary/20">
+              <Card className="text-center border-primary/20 hover:shadow-primary-glow">
                 <CardContent className="p-6">
                   <div className="h-12 w-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Shield className="h-6 w-6 text-primary" />
@@ -135,7 +139,7 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="text-center border-primary/20">
+              <Card className="text-center border-primary/20 hover:shadow-primary-glow">
                 <CardContent className="p-6">
                   <div className="h-12 w-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Globe className="h-6 w-6 text-primary" />
@@ -146,7 +150,7 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="text-center border-primary/20">
+              <Card className="text-center border-primary/20 hover:shadow-primary-glow">
                 <CardContent className="p-6">
                   <div className="h-12 w-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Award className="h-6 w-6 text-primary" />
@@ -171,7 +175,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="overflow-hidden border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-lg">
+            <Card className="overflow-hidden border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary-glow">
               <div
                 className="h-48 bg-cover bg-center relative"
                 style={{ backgroundImage: "url('/images/boston-police-banner.jpeg')" }}
@@ -186,7 +190,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-lg">
+            <Card className="overflow-hidden border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary-glow">
               <div
                 className="h-48 bg-cover bg-center relative"
                 style={{
@@ -204,7 +208,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-lg">
+            <Card className="overflow-hidden border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary-glow">
               <div
                 className="h-48 bg-cover bg-center relative"
                 style={{ backgroundImage: "url('/images/mass-state-police-banner.jpeg')" }}
@@ -220,7 +224,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-lg">
+            <Card className="overflow-hidden border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary-glow">
               <div
                 className="h-48 bg-cover bg-center relative"
                 style={{
@@ -240,7 +244,7 @@ export default function Home() {
 
             <DispatcherCard />
 
-            <Card className="overflow-hidden border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-lg">
+            <Card className="overflow-hidden border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary-glow">
               <div
                 className="h-48 bg-cover bg-center relative"
                 style={{
@@ -342,8 +346,8 @@ export default function Home() {
                   </div>
                   <div className="rounded-lg overflow-hidden">
                     <img
-                      src="/placeholder.svg?height=400&width=600"
-                      alt="Imperial CAD Login"
+                      src="/images/massreality-logo.png"
+                      alt="MassReality FivePD Logo"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -409,8 +413,8 @@ export default function Home() {
                   </div>
                   <div className="rounded-lg overflow-hidden">
                     <img
-                      src="/placeholder.svg?height=400&width=600"
-                      alt="Department Dashboard"
+                      src="/images/massreality-logo.png"
+                      alt="MassReality FivePD Logo"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -473,8 +477,8 @@ export default function Home() {
                   </div>
                   <div className="rounded-lg overflow-hidden">
                     <img
-                      src="/placeholder.svg?height=400&width=600"
-                      alt="Civilian Profile"
+                      src="/images/massreality-logo.png"
+                      alt="MassReality FivePD Logo"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -493,7 +497,7 @@ export default function Home() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <Card className="border-primary/20">
+            <Card className="border-primary/20 hover:shadow-primary-glow">
               <CardContent className="p-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
@@ -599,7 +603,7 @@ export default function Home() {
               <Link href="#">
                 <Button
                   size="lg"
-                  className="bg-secondary text-secondary-foreground hover:bg-[#a1c1f2] hover:text-primary-foreground shadow-lg hover:shadow-[#a1c1f2]/50 transition-all duration-300"
+                  className="bg-secondary text-secondary-foreground hover:bg-[#a1c1f2] hover:text-primary-foreground shadow-lg hover:shadow-[#a1c1f2]/50 transition-all duration-300 hover:shadow-primary-glow"
                 >
                   Server Rules (Game)
                 </Button>
@@ -608,7 +612,7 @@ export default function Home() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="bg-secondary text-secondary-foreground hover:bg-[#a1c1f2] hover:text-primary-foreground shadow-lg hover:shadow-[#a1c1f2]/50 transition-all duration-300"
+                  className="bg-secondary text-secondary-foreground hover:bg-[#a1c1f2] hover:text-primary-foreground shadow-lg hover:shadow-[#a1c1f2]/50 transition-all duration-300 hover:shadow-primary-glow"
                 >
                   Discord Rules
                 </Button>
@@ -628,7 +632,7 @@ export default function Home() {
             <div>
               <h3 className="text-2xl font-bold mb-6 text-center">Head Administrator</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
                   <CardContent className="p-4 text-center flex flex-col items-center">
                     <Image
                       src="https://cdn.discordapp.com/attachments/1395643075656683602/1395643097869717556/IMG_4019.png?ex=687b316c&is=6879dfec&hm=07d78c18dc99c825e286fa5d3cf8d17fcf064ed8b8e51a087c69ef588223cd12&" // Replace with your Head Administrator's image URL
@@ -647,7 +651,7 @@ export default function Home() {
             <div>
               <h3 className="text-2xl font-bold mb-6 text-center">Administrators</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
                   <CardContent className="p-4 text-center flex flex-col items-center">
                     <Image
                       src="https://cdn.discordapp.com/guilds/1123746756459507846/users/990056042081689621/avatars/f84e27f896f0333d1e875fbf08189981.webp?size=128"
@@ -659,7 +663,7 @@ export default function Home() {
                     <h3 className="font-bold text-foreground">Moon</h3>
                   </CardContent>
                 </Card>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
                   <CardContent className="p-4 text-center flex flex-col items-center">
                     <Image
                       src="https://cdn.discordapp.com/avatars/435494780735193090/40f318eccc38d090a0d3f7887960861d.webp?size=100"
@@ -678,7 +682,7 @@ export default function Home() {
             <div>
               <h3 className="text-2xl font-bold mb-6 text-center">Community Staff</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
                   <CardContent className="p-4 text-center flex flex-col items-center">
                     <Image
                       src="https://cdn.discordapp.com/avatars/521324624479387648/787e522cc39f4611147b67e85c50e4e6.webp?size=100"
@@ -690,7 +694,7 @@ export default function Home() {
                     <h3 className="font-bold text-foreground">Jokerzzz</h3>
                   </CardContent>
                 </Card>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
                   <CardContent className="p-4 text-center flex flex-col items-center">
                     <Image
                       src="https://cdn.discordapp.com/avatars/1236830529857519619/7558e51bc94dc2c5be714da2c38ac4ee.webp?size=100"
@@ -702,7 +706,7 @@ export default function Home() {
                     <h3 className="font-bold text-foreground">Andrew Green</h3>
                   </CardContent>
                 </Card>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
                   <CardContent className="p-4 text-center flex flex-col items-center">
                     <Image
                       src="https://cdn.discordapp.com/avatars/1035351494708441180/46728b44570bf40b76e303cc9cae331c.webp?size=100"
@@ -714,7 +718,7 @@ export default function Home() {
                     <h3 className="font-bold text-foreground">Western</h3>
                   </CardContent>
                 </Card>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
                   <CardContent className="p-4 text-center flex flex-col items-center">
                     <Image
                       src="https://cdn.discordapp.com/avatars/1275980537218994320/436b09c693b494d6f3ed63bcf1fb0798.webp?size=100"
@@ -726,7 +730,7 @@ export default function Home() {
                     <h3 className="font-bold text-foreground">Fadeqx</h3>
                   </CardContent>
                 </Card>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
                   <CardContent className="p-4 text-center flex flex-col items-center">
                     <Image
                       src="https://cdn.discordapp.com/avatars/812365198274854953/2e9607803f3653dd0f0fddf19f6f2a28.webp?size=100"
@@ -738,7 +742,7 @@ export default function Home() {
                     <h3 className="font-bold text-foreground">Warfilms</h3>
                   </CardContent>
                 </Card>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
                   <CardContent className="p-4 text-center flex flex-col items-center">
                     <Image
                       src="https://cdn.discordapp.com/avatars/1185413887848370289/bef99ce107b4db53f035363bb8bb1b80.webp?size=100"
@@ -750,7 +754,7 @@ export default function Home() {
                     <h3 className="font-bold text-foreground">ItsJustSlams</h3>
                   </CardContent>
                 </Card>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
                   <CardContent className="p-4 text-center flex flex-col items-center">
                     <Image
                       src="https://cdn.discordapp.com/avatars/745333370216775803/fa27c27343f4d89099e2f6757a7b932e.webp?size=100"
@@ -783,13 +787,17 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link href="https://cfx.re/join/3z5ljb" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-lg">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-lg hover:shadow-primary-glow">
                   <MapPin className="mr-2 h-4 w-4" /> {/* Re-adding the MapPin icon */}
                   Connect to Server
                 </Button>
               </Link>
               <Link href="https://discord.gg/massreality" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="lg" className="hover:bg-primary/10 bg-transparent">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="hover:bg-primary/10 bg-transparent hover:shadow-primary-glow"
+                >
                   <Discord className="mr-2 h-4 w-4" />
                   Join Our Discord
                 </Button>

@@ -73,6 +73,9 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      boxShadow: {
+        "primary-glow": "0 0 15px 5px #a1c1f2",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

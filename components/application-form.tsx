@@ -184,7 +184,11 @@ export function ApplicationForm() {
         </div>
       )}
 
-      <Button type="submit" className="w-full bg-primary hover:bg-primary/90" disabled={isPending}>
+      <Button
+        type="submit"
+        className="w-full bg-primary hover:bg-primary/90 hover:shadow-primary-glow"
+        disabled={isPending}
+      >
         {isPending ? (
           <>
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />

@@ -8,10 +8,13 @@ import Link from "next/link"
 
 export function DispatcherCard() {
   return (
-    <Card className="overflow-hidden border-primary/20 hover:border-primary transition-colors">
+    <Card className="overflow-hidden border-primary/20 hover:border-primary transition-colors hover:shadow-primary-glow">
       <div
         className="h-48 bg-cover bg-center"
-        style={{ backgroundImage: "url('https://cdn.discordapp.com/attachments/1395643075656683602/1395654882500808736/BRCC_Website_Banner.png?ex=687b3c66&is=6879eae6&hm=7a97292dc47c80d9fec4b5293e4b53eda2453345fb1843450c5ceca221ac50f4&')" }}
+        style={{
+          backgroundImage:
+            "url('https://cdn.discordapp.com/attachments/1395643075656683602/1395654882500808736/BRCC_Website_Banner.png?ex=687b3c66&is=6879eae6&hm=7a97292dc47c80d9fec4b5293e4b53eda2453345fb1843450c5ceca221ac50f4&')",
+        }}
       />
       <CardContent className="p-6">
         <div className="flex justify-between items-center mb-4">
