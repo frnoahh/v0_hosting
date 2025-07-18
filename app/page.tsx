@@ -211,7 +211,10 @@ export default function Home() {
             <Card className="overflow-hidden border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary-glow">
               <div
                 className="h-48 bg-cover bg-center relative"
-                style={{ backgroundImage: "url('/images/mass-state-police-banner.jpeg')" }}
+                style={{
+                  backgroundImage:
+                    "url('https://cdn.discordapp.com/attachments/1395643075656683602/1395905686466068491/Screenshot_2025-07-18_141600.png?ex=687c25fa&is=687ad47a&hm=db2f1499d7b0b59952a400871822856a9116e6f39d1166f090ec39bf5e13a537&')",
+                }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
@@ -569,6 +572,188 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </section>
+
+        <section id="rules" className="py-20 bg-muted/50">
+          <div className="container">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Server Rules & Policies</h2>
+              <p className="text-muted-foreground max-w-[600px] mx-auto">
+                Professional standards and conduct expected from all members of our community
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link href="#">
+                <Button
+                  size="lg"
+                  className="bg-secondary text-secondary-foreground hover:bg-[#a1c1f2] hover:text-primary-foreground shadow-lg hover:shadow-[#a1c1f2]/50 transition-all duration-300 hover:shadow-primary-glow"
+                >
+                  Server Rules (Game)
+                </Button>
+              </Link>
+              <Link href="https://discord.gg/massreality" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="bg-secondary text-secondary-foreground hover:bg-[#a1c1f2] hover:text-primary-foreground shadow-lg hover:shadow-[#a1c1f2]/50 transition-all duration-300 hover:shadow-primary-glow"
+                >
+                  Discord Rules
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section id="staff" className="container py-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Meet Our Team</h2>
+            <p className="text-muted-foreground max-w-[600px] mx-auto">Meet the dedicated team behind MassReality</p>
+          </div>
+
+          <div className="space-y-12">
+            {/* Head Administrator */}
+            <div>
+              <h3 className="text-2xl font-bold mb-6 text-center">Head Administrator</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
+                  <CardContent className="p-4 text-center flex flex-col items-center">
+                    <Image
+                      src="https://cdn.discordapp.com/attachments/1395643075656683602/1395643097869717556/IMG_4019.png?ex=687b316c&is=6879dfec&hm=07d78c18dc99c825e286fa5d3cf8d17fcf064ed8b8e51a087c69ef588223cd12&" // Replace with your Head Administrator's image URL
+                      alt="Head Administrator"
+                      width={150}
+                      height={150}
+                      className="rounded-full aspect-square object-cover mb-4"
+                    />
+                    <h3 className="font-bold text-foreground">Frnoahh</h3>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            {/* Administrators */}
+            <div>
+              <h3 className="text-2xl font-bold mb-6 text-center">Administrators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
+                  <CardContent className="p-4 text-center flex flex-col items-center">
+                    <Image
+                      src="https://cdn.discordapp.com/guilds/1123746756459507846/users/990056042081689621/avatars/f84e27f896f0333d1e875fbf08189981.webp?size=128"
+                      alt="Administrator"
+                      width={150}
+                      height={150}
+                      className="rounded-full aspect-square object-cover mb-4"
+                    />
+                    <h3 className="font-bold text-foreground">Moon</h3>
+                  </CardContent>
+                </Card>
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
+                  <CardContent className="p-4 text-center flex flex-col items-center">
+                    <Image
+                      src="https://cdn.discordapp.com/avatars/435494780735193090/40f318eccc38d090a0d3f7887960861d.webp?size=100"
+                      alt="Administrator"
+                      width={150}
+                      height={150}
+                      className="rounded-full aspect-square object-cover mb-4"
+                    />
+                    <h3 className="font-bold text-foreground">Woofy</h3>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            {/* Community Staff */}
+            <div>
+              <h3 className="text-2xl font-bold mb-6 text-center">Community Staff</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
+                  <CardContent className="p-4 text-center flex flex-col items-center">
+                    <Image
+                      src="https://cdn.discordapp.com/avatars/521324624479387648/787e522cc39f4611147b67e85c50e4e6.webp?size=100"
+                      alt="Community Staff"
+                      width={150}
+                      height={150}
+                      className="rounded-full aspect-square object-cover mb-4"
+                    />
+                    <h3 className="font-bold text-foreground">Jokerzzz</h3>
+                    <p className="text-sm text-muted-foreground">Senior Staff</p>
+                  </CardContent>
+                </Card>
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
+                  <CardContent className="p-4 text-center flex flex-col items-center">
+                    <Image
+                      src="https://cdn.discordapp.com/avatars/1236830529857519619/7558e51bc94dc2c5be714da2c38ac4ee.webp?size=100"
+                      alt="Community Staff"
+                      width={150}
+                      height={150}
+                      className="rounded-full aspect-square object-cover mb-4"
+                    />
+                    <h3 className="font-bold text-foreground">Andrew Green</h3>
+                  </CardContent>
+                </Card>
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
+                  <CardContent className="p-4 text-center flex flex-col items-center">
+                    <Image
+                      src="https://cdn.discordapp.com/avatars/1035351494708441180/46728b44570bf40b76e303cc9cae331c.webp?size=100"
+                      alt="Community Staff"
+                      width={150}
+                      height={150}
+                      className="rounded-full aspect-square object-cover mb-4"
+                    />
+                    <h3 className="font-bold text-foreground">Western</h3>
+                  </CardContent>
+                </Card>
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
+                  <CardContent className="p-4 text-center flex flex-col items-center">
+                    <Image
+                      src="https://cdn.discordapp.com/avatars/1275980537218994320/436b09c693b494d6f3ed63bcf1fb0798.webp?size=100"
+                      alt="Community Staff"
+                      width={150}
+                      height={150}
+                      className="rounded-full aspect-square object-cover mb-4"
+                    />
+                    <h3 className="font-bold text-foreground">Fadeqx</h3>
+                  </CardContent>
+                </Card>
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
+                  <CardContent className="p-4 text-center flex flex-col items-center">
+                    <Image
+                      src="https://cdn.discordapp.com/avatars/812365198274854953/2e9607803f3653dd0f0fddf19f6f2a28.webp?size=100"
+                      alt="Community Staff"
+                      width={150}
+                      height={150}
+                      className="rounded-full aspect-square object-cover mb-4"
+                    />
+                    <h3 className="font-bold text-foreground">Warfilms</h3>
+                  </CardContent>
+                </Card>
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
+                  <CardContent className="p-4 text-center flex flex-col items-center">
+                    <Image
+                      src="https://cdn.discordapp.com/avatars/1185413887848370289/bef99ce107b4db53f035363bb8bb1b80.webp?size=100"
+                      alt="Community Staff"
+                      width={150}
+                      height={150}
+                      className="rounded-full aspect-square object-cover mb-4"
+                    />
+                    <h3 className="font-bold text-foreground">ItsJustSlams</h3>
+                  </CardContent>
+                </Card>
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
+                  <CardContent className="p-4 text-center flex flex-col items-center">
+                    <Image
+                      src="https://cdn.discordapp.com/avatars/745333370216775803/fa27c27343f4d89099e2f6757a7b932e.webp?size=100"
+                      alt="Community Staff"
+                      width={150}
+                      height={150}
+                      className="rounded-full aspect-square object-cover mb-4"
+                    />
+                    <h3 className="font-bold text-foreground">Megatron</h3>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
           </div>
         </section>
 

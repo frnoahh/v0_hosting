@@ -1,11 +1,12 @@
 import type React from "react"
 import "@/app/globals.css"
 import { Inter } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
+import ClientLayout from "./ClientLayout" // Import the client layout
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
+  // Metadata should be exported from a Server Component or a separate file
   title: "FiveM Community - Roleplay Server",
   description:
     "🏙️  MassReality FivePD, We offer an immense hyper-realistic 1:1 Massachusetts state roleplay experience. We take our roleplay experience seriously to clone real life events. Additionally, at MassReality you can easily dive into our hard working departments to keep the state running smoothly.",
@@ -20,9 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   )
