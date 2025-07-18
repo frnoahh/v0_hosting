@@ -10,8 +10,8 @@ const baseApplicationSchema = z.object({
   name: z.string().min(1, "Roleplay Name is required"),
   email: z.string().email("Invalid email address"),
   discordId: z.string().min(1, "Discord ID is required").max(50, "Discord ID cannot exceed 50 characters"), // Always required
-  age: z.coerce
-    .number()
+  age: z
+    .number() // Changed from z.coerce.number()
     .min(15, "You must be at least 15 years old to apply.")
     .max(99, "Please enter a realistic age."), // New required field with min/max
   department: z.enum(["Boston Regional Communications Center", "Early Access"], {
@@ -86,18 +86,18 @@ const applicationSchema = baseApplicationSchema.superRefine((data, ctx) => {
 })
 
 export async function submitApplication(prevState: any, formData: FormData) {
-  const data = {
-    name: formData.get("name"),
-    email: formData.get("email"),
-    discordId: formData.get("discordId"),
-    age: formData.get("age"), // Include new age field
-    department: formData.get("department"),
-    priorExperience: formData.get("priorExperience") || undefined,
-    dispatchScenario: formData.get("dispatchScenario") || undefined,
-    code5Scenario: formData.get("code5Scenario") || undefined,
-    message: formData.get("message") || undefined,
-    earlyAccessReason: formData.get("earlyAccessReason") || undefined,
-  }
+const data = {
+  name: formData.get("name"),
+  email: formData.get("email"),
+  discordId: formData.get("discordId"),
+  age: formData.get("age") ? Number(formData.get("age")) : undefined, // This is the updated line
+  department: formData.get("department"),
+  priorExperience: formData.get("priorExperience") || undefined,
+  dispatchScenario: formData.get("dispatchScenario") || undefined,
+  code5Scenario: formData.get("code5Scenario") || undefined,
+  message: formData.get("message") || undefined,
+  earlyAccessReason: formData.get("earlyAccessReason") || undefined,
+}
 
   // Validate the form data
   const parsed = applicationSchema.safeParse(data)
