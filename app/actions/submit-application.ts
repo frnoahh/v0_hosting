@@ -1,8 +1,5 @@
 "use server"
 
-import { revalidatePath } from "next/cache"
-import { redirect } from "next/navigation"
-
 export async function submitApplication(formData: FormData) {
   const data = {
     name: formData.get("name"),
@@ -18,7 +15,4 @@ export async function submitApplication(formData: FormData) {
   }
 
   console.log(data)
-
-  revalidatePath("/")
-  redirect("/success")
 }
