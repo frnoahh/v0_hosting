@@ -330,18 +330,6 @@ export default function Home() {
                           </p>
                         </div>
                       </li>
-                      <li className="flex items-start gap-2">
-                        <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                          <Check className="h-4 w-4 text-primary" />
-                        </div>
-                        <div>
-                          <p className="font-medium">Step 4: Get Whitelisted (if applicable)</p>
-                          <p className="text-sm text-muted-foreground">
-                            For whitelisted departments, ensure you have completed the application process on our
-                            website and received approval to access full department features within CAD.
-                          </p>
-                        </div>
-                      </li>
                     </ul>
                   </div>
                   <div className="rounded-lg overflow-hidden">
@@ -354,78 +342,69 @@ export default function Home() {
                 </div>
               </TabsContent>
               <TabsContent value="dept-info" className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-4">Department Information in CAD</h3>
-                    <p className="text-muted-foreground mb-6">
-                      Learn how to access and utilize department-specific features and information within the Imperial
-                      CAD system.
-                    </p>
-                    <ul className="space-y-2">
-                      <li className="flex items-start gap-2">
-                        <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                          <Check className="h-4 w-4 text-primary" />
-                        </div>
-                        <div>
-                          <p className="font-medium">Accessing Department Panels</p>
-                          <p className="text-sm text-muted-foreground">
-                            Navigate to your assigned department panel to view active calls, unit statuses, and dispatch
-                            tools.
-                          </p>
-                        </div>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                          <Check className="h-4 w-4 text-primary" />
-                        </div>
-                        <div>
-                          <p className="font-medium">Understanding Unit Statuses</p>
-                          <p className="text-sm text-muted-foreground">
-                            Familiarize yourself with different unit statuses (e.g., 10-8, 10-42) and how to update
-                            them.
-                          </p>
-                        </div>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                          <Check className="h-4 w-4 text-primary" />
-                        </div>
-                        <div>
-                          <p className="font-medium">Incident Reporting</p>
-                          <p className="text-sm text-muted-foreground">
-                            Learn how to create and submit detailed incident reports for calls you respond to.
-                          </p>
-                        </div>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                          <Check className="h-4 w-4 text-primary" />
-                        </div>
-                        <div>
-                          <p className="font-medium">Dispatching Procedures</p>
-                          <p className="text-sm text-muted-foreground">
-                            For dispatchers, understand the protocols for assigning units, creating calls, and managing
-                            the radio.
-                          </p>
-                        </div>
-                      </li>
-                    </ul>
+                <div className="flex flex-col items-center text-center">
+                  <h3 className="text-3xl font-bold mb-6">BASIC LAW ENFORCEMENT INFORMATION</h3>
+                  <div className="w-24 h-1 bg-primary mb-8" /> {/* Horizontal line */}
+                  <h3 className="text-2xl font-bold mb-8">DEPARTMENT CALLSIGNS</h3>
+                  <div className="space-y-8 text-left w-full max-w-md">
+                    <div>
+                      <h4 className="text-xl font-bold mb-2">Massachusetts State Police (MSP)</h4>
+                      <p className="text-muted-foreground">
+                        Format: (Troop Letter) A + dash + 1–2 digit unit number
+                        <br />
+                        Example: <span className="font-bold text-foreground">A-5</span>
+                        <br />
+                        (Troop A, Unit 5)
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-xl font-bold mb-2">Boston Police Department (BPD)</h4>
+                      <p className="text-muted-foreground">
+                        Format: (District prefix) B + unit type + number
+                        <br />
+                        Example: <span className="font-bold text-foreground">B-2 Car 12</span>
+                        <br />
+                        (District B-2, Car 12 patrol unit)
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-xl font-bold mb-2">Boston Fire Department (BFD)</h4>
+                      <p className="text-muted-foreground">
+                        Format: Apparatus type + number
+                        <br />
+                        Example: <span className="font-bold text-foreground">Engine 10</span>
+                        <br />
+                        (Fire Engine Company 10)
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-xl font-bold mb-2">Suffolk County Sheriff’s Department (SCSD)</h4>
+                      <p className="text-muted-foreground">
+                        Format: "Suffolk" + 2-digit unit number
+                        <br />
+                        Example: <span className="font-bold text-foreground">Suffolk 21</span>
+                        <br />
+                        (Deputy or Transport Unit 21)
+                      </p>
+                    </div>
                   </div>
-                  <div className="rounded-lg overflow-hidden">
-                    <img
-                      src="/images/massreality-logo.png"
-                      alt="MassReality FivePD Logo"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                </div>
+                <div className="mt-8 text-center text-red-400 bg-red-400/10 p-4 rounded-lg border border-red-400/20">
+                  <p className="font-medium flex items-center justify-center gap-2">
+                    <AlertTriangle className="h-5 w-5" />
+                    If you are caught with an unrealistic callsign, you will be talked to.
+                  </p>
                 </div>
               </TabsContent>
               <TabsContent value="create-civilian" className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
-                    <h3 className="text-2xl font-bold mb-4">Creating Your Civilian Character</h3>
+                    <h3 className="text-2xl font-bold mb-4">Creating Your Civilian Character in Imperial CAD</h3>
                     <p className="text-muted-foreground mb-6">
-                      As a civilian, you can create and manage your character's identity, vehicles, and properties
+                      Follow these steps to set up your civilian profile, register vehicles, and manage properties
                       within Imperial CAD.
                     </p>
                     <ul className="space-y-2">
@@ -434,9 +413,10 @@ export default function Home() {
                           <Check className="h-4 w-4 text-primary" />
                         </div>
                         <div>
-                          <p className="font-medium">Registering a Civilian Profile</p>
+                          <p className="font-medium">Step 1: Create Your Civilian Profile</p>
                           <p className="text-sm text-muted-foreground">
-                            Create your civilian identity with a name, date of birth, and other relevant details.
+                            Navigate to the Civilian section. You will be prompted to create a new civilian character.
+                            Fill in your desired roleplay name, date of birth, and other personal details.
                           </p>
                         </div>
                       </li>
@@ -445,9 +425,10 @@ export default function Home() {
                           <Check className="h-4 w-4 text-primary" />
                         </div>
                         <div>
-                          <p className="font-medium">Managing Vehicles</p>
+                          <p className="font-medium">Step 2: Register Vehicles</p>
                           <p className="text-sm text-muted-foreground">
-                            Add and manage your personal vehicles, including license plates and vehicle types.
+                            In your civilian profile, find the "Vehicles" section. Add your in-game vehicles by entering
+                            their make, model, and license plate number.
                           </p>
                         </div>
                       </li>
@@ -456,9 +437,10 @@ export default function Home() {
                           <Check className="h-4 w-4 text-primary" />
                         </div>
                         <div>
-                          <p className="font-medium">Registering Properties</p>
+                          <p className="font-medium">Step 3: Register Properties</p>
                           <p className="text-sm text-muted-foreground">
-                            Register properties you own or reside in within the game world.
+                            Look for a "Properties" or "Residences" section. You can register any in-game properties you
+                            own or reside in, providing details like address.
                           </p>
                         </div>
                       </li>
@@ -587,187 +569,6 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
-          </div>
-        </section>
-
-        <section id="rules" className="py-20 bg-muted/50">
-          <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Server Rules & Policies</h2>
-              <p className="text-muted-foreground max-w-[600px] mx-auto">
-                Professional standards and conduct expected from all members of our community
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="#">
-                <Button
-                  size="lg"
-                  className="bg-secondary text-secondary-foreground hover:bg-[#a1c1f2] hover:text-primary-foreground shadow-lg hover:shadow-[#a1c1f2]/50 transition-all duration-300 hover:shadow-primary-glow"
-                >
-                  Server Rules (Game)
-                </Button>
-              </Link>
-              <Link href="https://discord.gg/massreality" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="bg-secondary text-secondary-foreground hover:bg-[#a1c1f2] hover:text-primary-foreground shadow-lg hover:shadow-[#a1c1f2]/50 transition-all duration-300 hover:shadow-primary-glow"
-                >
-                  Discord Rules
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <section id="staff" className="container py-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Meet Our Team</h2>
-            <p className="text-muted-foreground max-w-[600px] mx-auto">Meet the dedicated team behind MassReality</p>
-          </div>
-
-          <div className="space-y-12">
-            {/* Head Administrator */}
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-center">Head Administrator</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
-                  <CardContent className="p-4 text-center flex flex-col items-center">
-                    <Image
-                      src="https://cdn.discordapp.com/attachments/1395643075656683602/1395643097869717556/IMG_4019.png?ex=687b316c&is=6879dfec&hm=07d78c18dc99c825e286fa5d3cf8d17fcf064ed8b8e51a087c69ef588223cd12&" // Replace with your Head Administrator's image URL
-                      alt="Head Administrator"
-                      width={150}
-                      height={150}
-                      className="rounded-full aspect-square object-cover mb-4"
-                    />
-                    <h3 className="font-bold text-foreground">Frnoahh</h3>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-
-            {/* Administrators */}
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-center">Administrators</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
-                  <CardContent className="p-4 text-center flex flex-col items-center">
-                    <Image
-                      src="https://cdn.discordapp.com/guilds/1123746756459507846/users/990056042081689621/avatars/f84e27f896f0333d1e875fbf08189981.webp?size=128"
-                      alt="Administrator"
-                      width={150}
-                      height={150}
-                      className="rounded-full aspect-square object-cover mb-4"
-                    />
-                    <h3 className="font-bold text-foreground">Moon</h3>
-                  </CardContent>
-                </Card>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
-                  <CardContent className="p-4 text-center flex flex-col items-center">
-                    <Image
-                      src="https://cdn.discordapp.com/avatars/435494780735193090/40f318eccc38d090a0d3f7887960861d.webp?size=100"
-                      alt="Administrator"
-                      width={150}
-                      height={150}
-                      className="rounded-full aspect-square object-cover mb-4"
-                    />
-                    <h3 className="font-bold text-foreground">Woofy</h3>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-
-            {/* Community Staff */}
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-center">Community Staff</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
-                  <CardContent className="p-4 text-center flex flex-col items-center">
-                    <Image
-                      src="https://cdn.discordapp.com/avatars/521324624479387648/787e522cc39f4611147b67e85c50e4e6.webp?size=100"
-                      alt="Community Staff"
-                      width={150}
-                      height={150}
-                      className="rounded-full aspect-square object-cover mb-4"
-                    />
-                    <h3 className="font-bold text-foreground">Jokerzzz</h3>
-                  </CardContent>
-                </Card>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
-                  <CardContent className="p-4 text-center flex flex-col items-center">
-                    <Image
-                      src="https://cdn.discordapp.com/avatars/1236830529857519619/7558e51bc94dc2c5be714da2c38ac4ee.webp?size=100"
-                      alt="Community Staff"
-                      width={150}
-                      height={150}
-                      className="rounded-full aspect-square object-cover mb-4"
-                    />
-                    <h3 className="font-bold text-foreground">Andrew Green</h3>
-                  </CardContent>
-                </Card>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
-                  <CardContent className="p-4 text-center flex flex-col items-center">
-                    <Image
-                      src="https://cdn.discordapp.com/avatars/1035351494708441180/46728b44570bf40b76e303cc9cae331c.webp?size=100"
-                      alt="Community Staff"
-                      width={150}
-                      height={150}
-                      className="rounded-full aspect-square object-cover mb-4"
-                    />
-                    <h3 className="font-bold text-foreground">Western</h3>
-                  </CardContent>
-                </Card>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
-                  <CardContent className="p-4 text-center flex flex-col items-center">
-                    <Image
-                      src="https://cdn.discordapp.com/avatars/1275980537218994320/436b09c693b494d6f3ed63bcf1fb0798.webp?size=100"
-                      alt="Community Staff"
-                      width={150}
-                      height={150}
-                      className="rounded-full aspect-square object-cover mb-4"
-                    />
-                    <h3 className="font-bold text-foreground">Fadeqx</h3>
-                  </CardContent>
-                </Card>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
-                  <CardContent className="p-4 text-center flex flex-col items-center">
-                    <Image
-                      src="https://cdn.discordapp.com/avatars/812365198274854953/2e9607803f3653dd0f0fddf19f6f2a28.webp?size=100"
-                      alt="Community Staff"
-                      width={150}
-                      height={150}
-                      className="rounded-full aspect-square object-cover mb-4"
-                    />
-                    <h3 className="font-bold text-foreground">Warfilms</h3>
-                  </CardContent>
-                </Card>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
-                  <CardContent className="p-4 text-center flex flex-col items-center">
-                    <Image
-                      src="https://cdn.discordapp.com/avatars/1185413887848370289/bef99ce107b4db53f035363bb8bb1b80.webp?size=100"
-                      alt="Community Staff"
-                      width={150}
-                      height={150}
-                      className="rounded-full aspect-square object-cover mb-4"
-                    />
-                    <h3 className="font-bold text-foreground">ItsJustSlams</h3>
-                  </CardContent>
-                </Card>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
-                  <CardContent className="p-4 text-center flex flex-col items-center">
-                    <Image
-                      src="https://cdn.discordapp.com/avatars/745333370216775803/fa27c27343f4d89099e2f6757a7b932e.webp?size=100"
-                      alt="Community Staff"
-                      width={150}
-                      height={150}
-                      className="rounded-full aspect-square object-cover mb-4"
-                    />
-                    <h3 className="font-bold text-foreground">Megatron</h3>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
           </div>
         </section>
 
