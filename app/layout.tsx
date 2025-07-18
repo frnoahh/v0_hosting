@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "MassReality",
-  description: null,
+  description: null, // This is set to null to remove the description
   icons: {
     icon: "/images/massreality-logo.png",
   },
