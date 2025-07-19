@@ -38,6 +38,9 @@ export function ApplicationForm() {
 
       <div>
         <Label htmlFor="email">Email Address</Label>
+        <p className="text-sm text-muted-foreground mt-1">
+          You must verify your email; after you apply, you will be sent an email.
+        </p>
         <Input id="email" name="email" type="email" placeholder="john.doe@example.com" required disabled={isPending} />
         {state.errors?.email && <p className="text-red-500 text-sm mt-1">{state.errors.email}</p>}
       </div>

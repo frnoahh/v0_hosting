@@ -496,6 +496,15 @@ export default function Home() {
                         </div>
                       </li>
                       <li className="flex items-start gap-2">
+                        <Check className="h-5 w-5 text-primary mt-0.5" />
+                        <div>
+                          <p className="font-medium">Verified Email</p>
+                          <p className="text-sm text-muted-foreground">
+                            Email verification is required for all applications.
+                          </p>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-2">
                         <Shield className="h-5 w-5 text-primary mt-0.5" />
                         <div>
                           <p className="font-medium">Clean Record</p>
