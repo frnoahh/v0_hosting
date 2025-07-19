@@ -1,3 +1,4 @@
+typescriptreact file="app/api/verify-email/route.ts"
 import { type NextRequest, NextResponse } from "next/server"
 import { supabaseServer } from "@/lib/supabase/server" // Import the server-side Supabase client
 
@@ -51,9 +52,69 @@ export async function GET(request: NextRequest) {
       )
     }
 
-    // Optionally, send a new Discord webhook notification here
-    // to indicate that the application's email has been verified.
-    // This would be a separate webhook or an update to the existing one.
+    // Send Discord webhook notification for successful email verification
+    const webhookUrl = process.env.DISCORD_APPLICATION_WEBHOOK_URL
+
+    if (webhookUrl) {
+      const discordPayload = {
+        username: "MassReality Application Bot",
+        avatar_url: "https://massreality.vercel.app/images/massreality-logo.png",
+        embeds: [
+          {
+            title: `✅ Email Verified: ${application.name} (${application.department})`,
+            description: `The email address for **${application.name}** (Discord ID: ${application.discord_id}) applying for **${application.department}** has been successfully verified.`,
+            color: 0x00ff00, // Green color
+            fields: [
+              {
+                name: "Applicant Name",
+                value: application.name,
+                inline: true,
+              },
+              {
+                name: "Email",
+                value: application.email,
+                inline: true,
+              },
+              {
+                name: "Discord ID",
+                value: application.discord_id,
+                inline: true,
+              },
+              {
+                name: "Department",
+                value: application.department,
+                inline: false,
+              },
+            ],
+            timestamp: new Date().toISOString(),
+            footer: {
+              text: "MassReality FivePD Application System",
+            },
+          },
+        ],
+      }
+
+      try {
+        const webhookResponse = await fetch(webhookUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(discordPayload),
+        })
+
+        if (!webhookResponse.ok) {
+          const errorText = await webhookResponse.text()
+          console.error("Failed to send email verification webhook to Discord:", webhookResponse.status, errorText)
+        } else {
+          console.log("Email verification webhook sent successfully to Discord.")
+        }
+      } catch (webhookError) {
+        console.error("Error sending email verification webhook:", webhookError)
+      }
+    } else {
+      console.warn("DISCORD_APPLICATION_WEBHOOK_URL is not set. Skipping email verification webhook.")
+    }
 
     return NextResponse.redirect(
       new URL("/verification-status?status=success&message=Your email has been successfully verified!", request.url),
@@ -65,6 +126,3 @@ export async function GET(request: NextRequest) {
         "/verification-status?status=error&message=An unexpected error occurred during verification",
         request.url,
       ),
-    )
-  }
-}
