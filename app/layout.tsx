@@ -7,7 +7,8 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "MassReality",
-  description: null, // This is set to null to remove the description
+  description:
+    "🏙️  MassReality FivePD, We offer an immense hyper-realistic 1:1 Massachusetts state roleplay experience. We take our roleplay experience seriously to clone real life events. Additionally, at MassReality you can easily dive into our hard working departments to keep the state running smoothly.",
   icons: {
     icon: "/images/massreality-logo.png",
   },

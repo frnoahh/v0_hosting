@@ -34,9 +34,7 @@ export default function Home() {
               height={40}
               className="rounded-full"
             />
-            <div className="flex flex-col justify-center">
-              {" "}
-              {/* Added flex-col and justify-center */}
+            <div>
               <span className="text-xl font-bold">MassReality</span>
               <span className="text-sm text-muted-foreground block leading-none">FivePD</span>
             </div>
