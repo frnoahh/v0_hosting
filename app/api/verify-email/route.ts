@@ -1,4 +1,3 @@
-typescriptreact file="app/api/verify-email/route.ts"
 import { type NextRequest, NextResponse } from "next/server"
 import { supabaseServer } from "@/lib/supabase/server" // Import the server-side Supabase client
 
@@ -126,3 +125,6 @@ export async function GET(request: NextRequest) {
         "/verification-status?status=error&message=An unexpected error occurred during verification",
         request.url,
       ),
+    )
+  }
+}
