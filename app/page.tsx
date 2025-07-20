@@ -146,7 +146,7 @@ export default function Home() {
                   </div>
                   <h3 className="font-bold mb-2">1:1 Massachusetts Server</h3>
                   <p className="text-sm text-muted-foreground">
-                    Accurate recreation of Massachusetts deptartment vehicles, clothing, and more!
+                    Accurate recreation of Massachusetts department vehicles, clothing, and more!
                   </p>
                 </CardContent>
               </Card>
