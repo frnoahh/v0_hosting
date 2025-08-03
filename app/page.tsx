@@ -19,7 +19,6 @@ import {
 } from "lucide-react"
 import { ServerStats } from "@/components/server-stats"
 import { DispatcherCard } from "@/components/dispatcher-card"
-import { ApplicationForm } from "@/components/application-form"
 
 export default function Home() {
   return (
@@ -344,54 +343,80 @@ export default function Home() {
                   </div>
                 </div>
               </TabsContent>
+
               <TabsContent value="dept-info" className="space-y-4">
                 <div className="flex flex-col items-center text-center">
                   <h3 className="text-3xl font-bold mb-6">BASIC LAW ENFORCEMENT INFORMATION</h3>
-                  <div className="w-24 h-1 bg-primary mb-8" /> {/* Horizontal line */}
+                  <div className="w-24 h-1 bg-primary mb-8" />
                   <h3 className="text-2xl font-bold mb-8">DEPARTMENT CALLSIGNS</h3>
-                  <div className="space-y-8 text-left w-full max-w-md">
+                  <div className="space-y-8 text-left w-full max-w-2xl">
                     <div>
-                      <h4 className="text-xl font-bold mb-2">Massachusetts State Police (MSP)</h4>
-                      <p className="text-muted-foreground">
-                        Format: (Troop Letter) A + dash + 1–2 digit unit number
-                        <br />
-                        Example: <span className="font-bold text-foreground">A-5</span>
-                        <br />
-                        (Troop A, Unit 5)
-                      </p>
+                      <h4 className="text-xl font-bold mb-4">Massachusetts State Police (MSP)</h4>
+                      <div className="space-y-2 text-muted-foreground">
+                        <p>
+                          <span className="font-bold text-foreground">HP##</span> - 1-Man Unit
+                        </p>
+                        <p>
+                          <span className="font-bold text-foreground">HS##</span> - Supervisor (Sgt/Lt)
+                        </p>
+                        <p>
+                          <span className="font-bold text-foreground">HK##</span> - K9 Unit
+                        </p>
+                        <p>
+                          <span className="font-bold text-foreground">HI##</span> - Detective
+                        </p>
+                        <p>
+                          <span className="font-bold text-foreground">HX##</span> - Tactical / STOP (SWAT)
+                        </p>
+                      </div>
                     </div>
 
                     <div>
-                      <h4 className="text-xl font-bold mb-2">Boston Police Department (BPD)</h4>
-                      <p className="text-muted-foreground">
-                        Format: (District prefix) B + unit type + number
-                        <br />
-                        Example: <span className="font-bold text-foreground">B-2 Car 12</span>
-                        <br />
-                        (District B-2, Car 12 patrol unit)
-                      </p>
+                      <h4 className="text-xl font-bold mb-4">Boston Police Department (BPD)</h4>
+                      <div className="space-y-2 text-muted-foreground">
+                        <p>
+                          <span className="font-bold text-foreground">6P##</span> - 1-Man Unit
+                        </p>
+                        <p>
+                          <span className="font-bold text-foreground">6B##</span> - Two-Man Patrol
+                        </p>
+                        <p>
+                          <span className="font-bold text-foreground">6D##</span> - Supervisor (Sgt/Lt)
+                        </p>
+                        <p>
+                          <span className="font-bold text-foreground">6K##</span> - K9 Unit
+                        </p>
+                        <p>
+                          <span className="font-bold text-foreground">6H##</span> - Detective
+                        </p>
+                        <p>
+                          <span className="font-bold text-foreground">6X##</span> - Tactical / STOP (SWAT)
+                        </p>
+                      </div>
                     </div>
 
                     <div>
-                      <h4 className="text-xl font-bold mb-2">Boston Fire Department (BFD)</h4>
-                      <p className="text-muted-foreground">
-                        Format: Apparatus type + number
-                        <br />
-                        Example: <span className="font-bold text-foreground">Engine 10</span>
-                        <br />
-                        (Fire Engine Company 10)
+                      <h4 className="text-xl font-bold mb-4">Suffolk County Sheriff's Department (SCSD)</h4>
+                      <p className="text-sm text-muted-foreground mb-3 italic">
+                        Note: Use 1### for North SA, 2### for South SA
                       </p>
-                    </div>
-
-                    <div>
-                      <h4 className="text-xl font-bold mb-2">Suffolk County Sheriff’s Department (SCSD)</h4>
-                      <p className="text-muted-foreground">
-                        Format: "Suffolk" + 2-digit unit number
-                        <br />
-                        Example: <span className="font-bold text-foreground">Suffolk 21</span>
-                        <br />
-                        (Deputy or Transport Unit 21)
-                      </p>
+                      <div className="space-y-2 text-muted-foreground">
+                        <p>
+                          <span className="font-bold text-foreground">2P##</span> - 1-Man Unit
+                        </p>
+                        <p>
+                          <span className="font-bold text-foreground">2B##</span> - Two-Man Patrol
+                        </p>
+                        <p>
+                          <span className="font-bold text-foreground">SD##</span> - Supervisor (Sgt/Lt)
+                        </p>
+                        <p>
+                          <span className="font-bold text-foreground">2K##</span> - K9 Unit
+                        </p>
+                        <p>
+                          <span className="font-bold text-foreground">2X##</span> - Tactical / STOP (SWAT)
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -402,6 +427,7 @@ export default function Home() {
                   </p>
                 </div>
               </TabsContent>
+
               <TabsContent value="create-civilian" className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
@@ -576,8 +602,41 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="mt-8">
-                  <ApplicationForm />
+                <div className="mt-8 space-y-4">
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold mb-4">Ready to Apply?</h3>
+                    <p className="text-muted-foreground mb-6">
+                      Choose your department below to access the application form:
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Link href="https://forms.google.com/your-brcc-form-link" target="_blank" rel="noopener noreferrer">
+                      <Button size="lg" className="w-full bg-primary hover:bg-primary/90 hover:shadow-primary-glow">
+                        Apply for Boston Regional Communications Center
+                        <ChevronRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
+
+                    <Link
+                      href="https://forms.google.com/your-early-access-form-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="w-full hover:bg-primary/10 hover:shadow-primary-glow bg-transparent"
+                      >
+                        Apply for Early Access
+                        <ChevronRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
+                  </div>
+
+                  <div className="text-center text-sm text-muted-foreground mt-4">
+                    <p>Applications are reviewed within 3-5 business days</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -629,7 +688,7 @@ export default function Home() {
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
                   <CardContent className="p-4 text-center flex flex-col items-center">
                     <Image
-                      src="https://cdn.discordapp.com/attachments/1395643075656683602/1395643097869717556/IMG_4019.png?ex=687b316c&is=6879dfec&hm=07d78c18dc99c825e286fa5d3cf8d17fcf064ed8b8e51a087c69ef588223cd12&" // Replace with your Head Administrator's image URL
+                      src="https://cdn.discordapp.com/attachments/1395643075656683602/1395643097869717556/IMG_4019.png?ex=6890f22c&is=688fa0ac&hm=90fcbb9aa7de39ec63c776473ffe82cc964a6903b48ad324582c7cf532f67385&" // Replace with your Head Administrator's image URL
                       alt="Head Administrator"
                       width={150}
                       height={150}
@@ -692,7 +751,7 @@ export default function Home() {
                 <Card className="overflow-hidden hover:shadow-lg transition-shadow w-48 border-2 border-[#a1c1f2] hover:shadow-[#a1c1f2]/50 hover:shadow-primary-glow">
                   <CardContent className="p-4 text-center flex flex-col items-center">
                     <Image
-                      src="https://cdn.discordapp.com/avatars/1236830529857519619/7558e51bc94dc2c5be714da2c38ac4ee.webp?size=100"
+                      src="https://cdn.discordapp.com/avatars/1236830529857519619/10c97851ac268f24a475faa608483df3.png?size=512"
                       alt="Community Staff"
                       width={150}
                       height={150}
