@@ -13,7 +13,7 @@ export function DispatcherCard() {
         className="h-48 bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://cdn.discordapp.com/attachments/1395643075656683602/1395654882500808736/BRCC_Website_Banner.png?ex=687b3c66&is=6879eae6&hm=7a97292dc47c80d9fec4b5293e4b53eda2453345fb1843450c5ceca221ac50f4&')",
+            "url('https://cdn.discordapp.com/attachments/1395643075656683602/1395654882500808736/BRCC_Website_Banner.png?ex=689794a6&is=68964326&hm=ecc295ee95897bd02c85dcdf2f7589b1afc1b0a67f6b36f19191ab4e88848c2b&')",
         }}
       />
       <CardContent className="p-6">
