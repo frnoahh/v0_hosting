@@ -80,10 +80,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/50 to-background z-10" />
           <div
             className="h-[600px] bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot_2025-08-08_214801.png-MhLzaOJBTHNk9Sek3bHxKGUNMsrC2y.jpeg')",
-            }}
+            style={{ backgroundImage: "url('/images/hero-background.jpeg')" }}
           />
           <div className="container absolute inset-0 flex flex-col items-center justify-center z-20 text-center">
             <Image
@@ -180,10 +177,7 @@ export default function Home() {
             <Card className="overflow-hidden border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary-glow">
               <div
                 className="h-48 bg-cover bg-center relative"
-                style={{
-                  backgroundImage:
-                    "url('https://cdn.discordapp.com/attachments/1393086033662578778/1398813949155213364/image.png?ex=6897de02&is=68968c82&hm=a0bc5337c04c1c17916106eafa05b8e01b0ef00b3b3817dcd4157c942279b61b&')",
-                }}
+                style={{ backgroundImage: "url('/images/boston-police-banner.jpeg')" }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
@@ -200,7 +194,7 @@ export default function Home() {
                 className="h-48 bg-cover bg-center relative"
                 style={{
                   backgroundImage:
-                    "url('https://cdn.discordapp.com/attachments/1395643075656683602/1395654589298118746/307638056_100377106178911_1660811692378937819_n.png?ex=68979460&is=689642e0&hm=2393a27a79a5b3fff5fbf72ce2a7d213b09c597615df3954736fd7b78ee05c0d&')",
+                    "https://cdn.discordapp.com/attachments/1395643075656683602/1395654589298118746/307638056_100377106178911_1660811692378937819_n.png?ex=68979460&is=689642e0&hm=2393a27a79a5b3fff5fbf72ce2a7d213b09c597615df3954736fd7b78ee05c0d&",
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -218,7 +212,7 @@ export default function Home() {
                 className="h-48 bg-cover bg-center relative"
                 style={{
                   backgroundImage:
-                    "url('https://cdn.discordapp.com/attachments/1402096206347374612/1403561637528473760/Screenshot_2025-08-08_214829.png?ex=68980023&is=6896aea3&hm=f7b92dc8b5b1cf2ba5489729b632c333830d02bcec9ae2a512b53fc6e7db08e8&')",
+                    "https://cdn.discordapp.com/attachments/1402096206347374612/1403561637528473760/Screenshot_2025-08-08_214829.png?ex=68980023&is=6896aea3&hm=f7b92dc8b5b1cf2ba5489729b632c333830d02bcec9ae2a512b53fc6e7db08e8&",
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -237,7 +231,7 @@ export default function Home() {
                 className="h-48 bg-cover bg-center relative"
                 style={{
                   backgroundImage:
-                    "url('https://cdn.discordapp.com/attachments/1395643075656683602/1395655749358719027/SCSD_Website_Banner.png?ex=68979574&is=689643f4&hm=fcd2d08df53f3ed8ad2ae1cb8c1c80395c1dcea07cf4b08f7c7cedf01e1934bf&')",
+                    "https://cdn.discordapp.com/attachments/1395643075656683602/1395655749358719027/SCSD_Website_Banner.png?ex=68979574&is=689643f4&hm=fcd2d08df53f3ed8ad2ae1cb8c1c80395c1dcea07cf4b08f7c7cedf01e1934bf&",
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -257,7 +251,7 @@ export default function Home() {
                 className="h-48 bg-cover bg-center relative"
                 style={{
                   backgroundImage:
-                    "url('https://cdn.discordapp.com/attachments/1395643075656683602/1395655865113116712/Screenshot_2025-07-17_170318.png?ex=68979590&is=68964410&hm=78336674e45909e648ebbca62f1c4e1b5160bd144f62063f7cf05eb0533c535a&')",
+                    "url('https://cdn.discordapp.com/attachments/1395643075656683602/1395655865113116712/Screenshot_2025-07-17_170318.png?ex=687b3d50&is=6879ebd0&hm=0141680baf1a603fbc9b965351a13b9ebd830a8e2c81b37998de3ea3f32b54d3&')",
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

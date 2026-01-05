@@ -1,6 +1,6 @@
 export async function GET() {
   try {
-    const response = await fetch("https://discord.com/api/v10/invites/massreality?with_counts=true", {
+    const response = await fetch("https://discord.com/api/v10/invites/WtUWQzjG3j?with_counts=true", {
       headers: {
         "User-Agent": "MassReality-Website/1.0",
       },
