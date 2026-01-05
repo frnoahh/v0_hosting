@@ -1,6 +1,6 @@
 export async function GET() {
   try {
-    const serverIP = "147.189.168.36:30412"
+    const serverIP = "31.214.128.244:29401"
 
     let playerCount = 0
     let maxPlayers = 10
